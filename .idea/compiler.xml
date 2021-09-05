@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Annotation profile for MojaApteka" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.16/lombok-1.18.16.jar" />
+        </processorPath>
+        <module name="frontend" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="drug" target="1.8" />
+      <module name="procurement" target="1.8" />
+      <module name="profit" target="1.8" />
+      <module name="shared-kernel" target="1.8" />
+      <module name="transaction" target="1.8" />
+      <module name="user-management" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="backend" options="" />
+      <module name="drug" options="-Amapstruct.defaultComponentModel=spring" />
+      <module name="frontend" options="-Amapstruct.defaultComponentModel=spring" />
+      <module name="procurement" options="-Amapstruct.defaultComponentModel=spring" />
+      <module name="profit" options="-Amapstruct.defaultComponentModel=spring" />
+      <module name="shared-kernel" options="-Amapstruct.defaultComponentModel=spring" />
+      <module name="transaction" options="-Amapstruct.defaultComponentModel=spring" />
+      <module name="user-management" options="-Amapstruct.defaultComponentModel=spring" />
+    </option>
+  </component>
+</project>

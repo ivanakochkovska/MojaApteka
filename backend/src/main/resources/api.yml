@@ -1,0 +1,97 @@
+openapi: 3.0.0
+info:
+  title: Drugs
+  description: Book CRUD API.
+  version: 1.0.0
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/ivanakochkovska/findApartmentAPI/1.0.0
+  - url: /
+paths:
+
+  /drugs/overview:
+    get:
+      tags:
+        - drugs
+      summary: Get all drugs.
+      responses:
+        200:
+          description: Successfull operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DrugItem'
+        400:
+          description: Not logged in
+
+  /drugs/{id}:
+    get:
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successfull operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DrugItemDetails'
+        400:
+          description: Not logged in
+
+
+components:
+  schemas:
+    DrugItem:
+      type: object
+      properties:
+        urlId:
+          type: string
+          description: URL of the drug
+        brandName:
+          type: string
+        genericName:
+          type: string
+        price:
+          type: string
+
+    DrugItemDetails:
+      type: object
+      properties:
+        urlId:
+          type: string
+          description: URL of the drug
+        brandName:
+          type: string
+        genericName:
+          type: string
+        price:
+          type: string
+        strength:
+          type: string
+        manufacturer:
+          type: string
+        dosageForm:
+          type: string
+        similarTo:
+          type: array
+          items:
+            $ref: '#/components/schemas/DrugItem'
+        seeAlso:
+          type: string
+
+
+
+
+
+
+
+
