@@ -65,7 +65,7 @@ const [searchResults, setSearchResults] = React.useState([]);
           <br/>
           <div className="input-group input-group-lg">
               <input type="text" className="form-control" aria-label="Large"
-                     aria-describedby="inputGroup-sizing-sm" placeholder={"Пребарај лек по име, генеричко име или цена"}
+                     aria-describedby="inputGroup-sizing-sm" placeholder={"Пребарај лек по име"}
               onChange={handleInputChange}/>
           </div>
           <br/>
@@ -75,7 +75,7 @@ const [searchResults, setSearchResults] = React.useState([]);
                   <th>Име</th>
                   <th>Генеричко име</th>
                   <th>Цена</th>
-                  <th>Слични лекови</th>
+                  <th>Детали</th>
               </tr>
               </thead>
               <tbody>

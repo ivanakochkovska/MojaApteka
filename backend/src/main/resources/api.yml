@@ -27,12 +27,13 @@ paths:
         400:
           description: Not logged in
 
-  /drugs/{id}:
+  /drug:
     get:
+      tags:
+        - drugs
       parameters:
-        - name: id
-          in: path
-          required: true
+        - in: query
+          name: id
           schema:
             type: string
       responses:
@@ -41,9 +42,7 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/DrugItemDetails'
+                $ref: '#/components/schemas/DrugItemDetails'
         400:
           description: Not logged in
 

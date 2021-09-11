@@ -14,8 +14,11 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class DrugsController implements DrugsApi {
 
+
+
     private final DrugService drugService;
     private final DrugsConverter drugsConverter;
+
 
     @Override
     public ResponseEntity<List<DrugItem>> drugsOverviewGet()  {

@@ -9,7 +9,8 @@ public class DrugsConverter {
     public DrugItem convertDrug(DrugItemDto drugItemDto) {
 
         DrugItem drugItem = new DrugItem();
-        drugItem.setUrlId(drugItemDto.getUrlId());
+        String getNumberOfTheUrl = drugItemDto.getUrlId().substring(30);
+        drugItem.setUrlId(getNumberOfTheUrl);
         drugItem.setBrandName(drugItemDto.getBrandName());
         drugItem.setGenericName(drugItemDto.getGenericName());
         drugItem.setPrice(drugItemDto.getPrice());

@@ -1,6 +1,7 @@
 
 import React, {Component} from "react";
 import axios from "axios";
+import {Link} from "react-router-dom";
 
 class DrugTableTest extends Component {
 
@@ -80,8 +81,7 @@ class DrugTableTest extends Component {
                         <div className="searchForm" >
                             <div className="input-group input-group-lg">
                                 <input type="text" className="form-control" aria-label="Large"
-                                       aria-describedby="inputGroup-sizing-sm" placeholder={"Пребарај лек по име, генеричко име или цена"}
-                                       placeholder="Пребарај книги"
+                                       aria-describedby="inputGroup-sizing-sm" placeholder={"Пребарај лек по име"}
                                        value={this.state.query}
                                        onChange={this.handleInputChange}
                                 />
@@ -95,7 +95,7 @@ class DrugTableTest extends Component {
                                 <th>Име</th>
                                 <th>Генеричко име</th>
                                 <th>Цена</th>
-                                <th>Слични лекови</th>
+                                <th>Детали</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -106,12 +106,20 @@ class DrugTableTest extends Component {
                                         <td>{drug.genericName}</td>
                                         <td>{this.formatPrice(drug.price)} DEN - MKD</td>
                                         <td>
+                                            <Link to={{
+                                                pathname: "/drug",
+                                                state: {
+                                                    drugId: drug.urlId,
+                                                }
+                                            }
+                                            }>
                                             <button className="btn btn-primary btn-sm" >Преглед
                                             </button>
+                                            </Link>
                                         </td>
                                     </tr>
                                 )
-                            };
+                            }
                             </tbody>
                         </table>
                     </div>
